@@ -5,13 +5,11 @@ SET(CMAKE_CXX_STANDARD 14)
 
 FIND_PACKAGE(Threads REQUIRED)
 
-SET(HEADERS)
-LIST(APPEND HEADERS common.h connection.h queue.h)
+SET(HEADERS common.h connection.h queue.h slab.h)
 
-SET(SOURCES)
-LIST(APPEND SOURCES common.cpp connection.cpp hug.cpp)
+SET(SOURCES common.cpp connection.cpp hug.cpp)
 
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/asio/asio/include)
 
-ADD_EXECUTABLE(hug ${SOURCES} ${HEADERS} ${ASIO_FILES})
+ADD_EXECUTABLE(hug ${SOURCES} ${HEADERS})
 TARGET_LINK_LIBRARIES(hug ${CMAKE_THREAD_LIBS_INIT})
