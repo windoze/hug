@@ -10,7 +10,7 @@ int main() {
 
     //connection::ptr conn_ptr = std::make_shared<connection>(io, [](auto ...){});
 
-    timer_t t(io, std::chrono::seconds(1));
+    waitable_timer_t t(io, std::chrono::seconds(1));
     t.async_wait([](auto &&ec) {
         std::cout << "Timer expired\n";
     });

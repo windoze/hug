@@ -34,7 +34,7 @@ constexpr std::size_t buf_size = 4096;
 constexpr std::size_t outgoing_queue_size = 256;
 constexpr std::size_t max_client_sockets = 10;
 
-typedef asio::basic_waitable_timer<std::chrono::steady_clock> timer_t;
+typedef asio::basic_waitable_timer<std::chrono::steady_clock> waitable_timer_t;
 typedef asio::ip::udp::endpoint endpoint_t;
 typedef asio::ip::udp::socket socket_t;
 
